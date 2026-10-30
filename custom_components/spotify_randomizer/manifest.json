@@ -1,0 +1,11 @@
+{
+  "domain": "spotify_randomizer",
+  "name": "Spotify Playlist Randomizer",
+  "documentation": "https://github.com/bernardowpezzo/ha-spotify-randomizer",
+  "issue_tracker": "https://github.com/bernardowpezzo/ha-spotify-randomizer/issues",
+  "dependencies": ["http"],
+  "codeowners": ["@bernardowpezzo"],
+  "requirements": ["spotipy==2.23.0"],
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
+}

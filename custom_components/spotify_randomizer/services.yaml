@@ -1,0 +1,11 @@
+generate_login_url:
+  name: Generate Login URL
+  description: Generates a Spotify OAuth authorization URL for the calling Home Assistant user and writes it to input_text.spotify_login_url.
+
+fetch_playlists:
+  name: Fetch Playlists
+  description: Fetches all Spotify playlists owned by the authenticated user and populates input_select.spotify_playlists.
+
+shuffle:
+  name: Shuffle Selected Playlist
+  description: Performs an in-place Fisher-Yates shuffle on the playlist currently selected in input_select.spotify_playlists.

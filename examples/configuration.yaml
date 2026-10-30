@@ -1,0 +1,23 @@
+# ==============================================================================
+# Home Assistant configuration.yaml Example Configuration
+# ==============================================================================
+
+# Helper entities needed for the Lovelace Dashboard UI:
+input_text:
+  spotify_login_url:
+    name: "Spotify Login Link"
+    max: 500
+
+input_select:
+  spotify_playlists:
+    name: "Selected Spotify Playlist"
+    options:
+      - "No playlists found"
+    initial: "No playlists found"
+
+# Spotify Randomizer Custom Integration
+spotify_randomizer:
+  client_id: "YOUR_SPOTIFY_CLIENT_ID"
+  client_secret: "YOUR_SPOTIFY_CLIENT_SECRET"
+  # Set your external or internal Home Assistant URL with /api/spotify_randomizer/callback:
+  redirect_uri: "https://your-homeassistant-domain.duckdns.org:8123/api/spotify_randomizer/callback"

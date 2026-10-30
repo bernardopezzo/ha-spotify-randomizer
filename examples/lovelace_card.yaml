@@ -1,0 +1,45 @@
+# ==============================================================================
+# Lovelace Dashboard Card Example (Entities Card + Call Service Buttons)
+# ==============================================================================
+type: vertical-stack
+cards:
+  - type: entities
+    title: 🎵 Spotify Playlist Randomizer
+    entities:
+      - entity: input_select.spotify_playlists
+        name: Playlist
+
+  - type: horizontal-stack
+    cards:
+      # Step 1: Login / Re-authorize
+      - type: button
+        name: 1. Authorize
+        icon: mdi:spotify
+        tap_action:
+          action: call-service
+          service: spotify_randomizer.generate_login_url
+
+      # Step 2: Fetch Owned Playlists
+      - type: button
+        name: 2. Load Playlists
+        icon: mdi:refresh
+        tap_action:
+          action: call-service
+          service: spotify_randomizer.fetch_playlists
+
+      # Step 3: Trigger In-Place Shuffle
+      - type: button
+        name: 3. Shuffle
+        icon: mdi:shuffle-variant
+        tap_action:
+          action: call-service
+          service: spotify_randomizer.shuffle
+
+  # Display the login link when generated
+  - type: markdown
+    content: |
+      {% if states('input_text.spotify_login_url') != '' %}
+      [👉 Click here to authorize Spotify with Home Assistant]({{ states('input_text.spotify_login_url') }})
+      {% else %}
+      *Click "1. Authorize" above to generate a new login link.*
+      {% endif %}

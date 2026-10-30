@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Spotify OAuth token caches
+.cache*
+.cache-*
+
+# Environment & secrets
+.env
+*.secret
+
+# Home Assistant temporary
+.storage/
+
+# IDE & OS
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
